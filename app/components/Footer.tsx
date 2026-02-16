@@ -17,7 +17,7 @@ const Footer = () => (
       <div className="grid md:grid-cols-4 gap-12 mb-16">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-bold text-white">AP</div>
+            <img src="/adi.webp" alt="Logo" className="w-10 h-10 rounded-full object-cover object-top" />
             <span className="text-xl font-bold tracking-tight text-white font-poppins">ADI <span className="text-blue-500">PRIMANTO</span></span>
           </div>
           <p className="text-gray-500 leading-relaxed max-w-sm mt-2">Membantu bisnis membangun kredibilitas digital melalui website modern yang dioptimasi untuk konversi dan performa.</p>
@@ -45,7 +45,6 @@ const Footer = () => (
         <p>&copy; {new Date().getFullYear()} Adi Primanto. All Rights Reserved.</p>
         <div className="flex items-center md:items-start gap-4 md:gap-6 flex-col md:flex-row">
           <span>Yogyakarta, Indonesia</span>
-          <span className="flex items-center gap-1">Made with <Heart size={14} className="text-red-500" /> by Adi Primanto</span>
         </div>
       </div>
     </div>

@@ -1,13 +1,14 @@
 'use client';
 
+import Image from 'next/image';
 import { MessageCircle, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const avatars: string[] = [
-  'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1719603785926-84d214438120?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1542178243-bc20204b769f?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  'https://images.unsplash.com/photo-1700126761911-84f19978e8bb?q=80&w=1442&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1719603785926-84d214438120?q=80&w=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1542178243-bc20204b769f?q=80&w=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1700126761911-84f19978e8bb?q=80&w=80&auto=format&fit=crop',
 ];
 
 const Hero = () => (
@@ -43,8 +44,15 @@ const Hero = () => (
         <div className="mt-12 flex items-center gap-4 text-gray-500 border-t border-white/5 pt-8">
           <div className="flex -space-x-3">
             {avatars.map((avatar, index) => (
-              // <div key={i} className="w-10 h-10 rounded-full border-2 border-black bg-gray-800" />
-              <img key={index} src={avatar} alt={`Client ${index}`} className="w-10 h-10 rounded-full border-2 border-black bg-gray-800" />
+              <Image 
+                key={index} 
+                src={avatar} 
+                alt={`Client ${index + 1}`} 
+                width={40} 
+                height={40} 
+                className="w-10 h-10 rounded-full border-2 border-black bg-gray-800 object-cover"
+                unoptimized
+              />
             ))}
           </div>
           <p className="flex-1 text-sm font-medium">Dipercaya oleh <span className="text-white">20+ Klien</span> dari berbagai industri</p>
@@ -59,9 +67,12 @@ const Hero = () => (
       >
         {/* Project Screenshot */}
         <div className="relative z-10 rounded-2xl border border-white/10 shadow-2xl overflow-hidden group">
-          <img 
+          <Image 
             src="/project-screenshot.png" 
             alt="Asih Angger Fotografi - Featured Project" 
+            width={600}
+            height={400}
+            priority
             className="w-full h-auto md:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
           />
           {/* Overlay gradient */}
