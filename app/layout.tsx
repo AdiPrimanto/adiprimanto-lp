@@ -15,9 +15,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Adi Primanto - Frontend Engineer & Web Developer",
-  description: "Membangun kehadiran digital yang berkelas, cepat, dan dioptimasi untuk mendominasi pasar. 5+ tahun pengalaman membangun website profesional.",
-  keywords: ["web developer", "frontend engineer", "landing page", "website", "Next.js", "React", "Vue.js", "Yogyakarta"],
+  title: "Adi Primanto - Software Engineer & Web Developer",
+  description:
+    "Membangun kehadiran digital yang berkelas, cepat, dan dioptimasi untuk mendominasi pasar. 5+ tahun pengalaman membangun website profesional.",
+  keywords: [
+    "web developer",
+    "software engineer",
+    "landing page",
+    "website",
+    "Next.js",
+    "React",
+    "Vue.js",
+    "Yogyakarta",
+  ],
   authors: [{ name: "Adi Primanto" }],
   metadataBase: new URL("https://adiprimanto.vercel.app"),
   icons: {
@@ -31,8 +41,9 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   openGraph: {
-    title: "Adi Primanto - Frontend Engineer & Web Developer",
-    description: "Membangun kehadiran digital yang berkelas, cepat, dan dioptimasi untuk mendominasi pasar.",
+    title: "Adi Primanto - Software Engineer & Web Developer",
+    description:
+      "Membangun kehadiran digital yang berkelas, cepat, dan dioptimasi untuk mendominasi pasar.",
     type: "website",
     url: "https://adiprimanto.vercel.app",
     siteName: "Adi Primanto",
@@ -41,15 +52,16 @@ export const metadata: Metadata = {
         url: "/adi.webp",
         width: 1200,
         height: 630,
-        alt: "Adi Primanto - Frontend Engineer",
+        alt: "Adi Primanto - Software Engineer",
       },
     ],
     locale: "id_ID",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adi Primanto - Frontend Engineer & Web Developer",
-    description: "Membangun kehadiran digital yang berkelas, cepat, dan dioptimasi untuk mendominasi pasar.",
+    title: "Adi Primanto - Software Engineer & Web Developer",
+    description:
+      "Membangun kehadiran digital yang berkelas, cepat, dan dioptimasi untuk mendominasi pasar.",
     images: ["/adi.webp"],
   },
   robots: {
