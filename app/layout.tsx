@@ -1,18 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Adi Primanto - Software Engineer & Web Developer",
@@ -77,11 +64,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body
-        className={`${poppins.variable} ${inter.variable} antialiased bg-[#0F0F0F] text-white min-h-screen font-inter`}
-      >
-        {children}
-      </body>
+      <head>
+        <link
+          rel="icon"
+          href="/favicon-32.png"
+          type="image/png"
+          sizes="32x32"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Syne+Mono&family=Inter:wght@300;400;500&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

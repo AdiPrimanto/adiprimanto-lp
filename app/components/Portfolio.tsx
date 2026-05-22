@@ -1,64 +1,185 @@
-import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+"use client";
 
-const Portfolio = () => {
-  const projects = [
-    { title: "Asih Angger Fotografi", category: "Fotografi", impact: "Konversi & Penjualan Meningkat 50%", badge: "Landing Page", image: "/portfolio/porto1.png" },
-    { title: "Nicofaart Furniture", category: "Furniture", impact: "Brand Terlihat Lebih Profesional & Lead Naik 50%", badge: "Landing Page", image: "/portfolio/porto2.png" },
-    { title: "SMPIPK - Muhammadiyah Delanggu", category: "Company Profile", impact: "Peningkatan Kunjungan Website", badge: "Company Profile", image: "/portfolio/porto3.webp" },
-  ];
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
-  return (
-    <section id="portfolio" className="py-24 bg-white/5">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-          <div>
-            <h2 className="text-4xl font-bold text-white mb-4">Karya Terpilih</h2>
-            <p className="text-gray-400 max-w-md">Hasil kerja yang dirancang untuk mencapai tujuan bisnis, bukan sekadar tampil menarik.</p>
+const projects = [
+  {
+    title: "Asih Angger Fotografi",
+    category: "Landing Page",
+    impact: "Konversi & Penjualan Meningkat 50%",
+    tags: ["Next.js", "Tailwind"],
+    image: "/portfolio/porto1.png",
+    url: null,
+  },
+  {
+    title: "Nicofaart Furniture",
+    category: "Landing Page",
+    impact: "Brand Lebih Profesional & Lead Naik 50%",
+    tags: ["Vue.js", "Nuxt"],
+    image: "/portfolio/porto2.png",
+    url: null,
+  },
+  {
+    title: "SMPIPK — Muhammadiyah Delanggu",
+    category: "Company Profile",
+    impact: "Peningkatan Kunjungan Website",
+    tags: ["WordPress", "SEO"],
+    image: "/portfolio/porto3.webp",
+    url: null,
+  },
+];
+
+const Portfolio = () => (
+  <section
+    id="portfolio"
+    className="section-padding"
+    style={{
+      background: "var(--color-bg)",
+      borderTop: "1px solid var(--color-border)",
+    }}
+  >
+    <div
+      style={{ width: "78%", margin: "0 auto" }}
+      className="max-lg:w-[88%] max-md:w-[92%]"
+    >
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div>
+          <div className="section-eyebrow">
+            04 <span className="eyebrow-sep">/</span> PORTFOLIO
           </div>
-          <a 
-            href="https://portfolio-adiprimanto.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-blue-500 font-bold hover:underline"
+          <h2
+            className="font-display font-black tracking-[-0.02em] leading-[1.05] mt-3 mb-3"
+            style={{
+              fontSize: "clamp(32px, 4vw, 52px)",
+              color: "var(--color-white)",
+            }}
           >
-            Jelajahi Seluruh Portfolio <ArrowUpRight size={20} />
-          </a>
+            Hasil Kerja Nyata.
+          </h2>
+          <p
+            className="text-sm font-light"
+            style={{ color: "var(--color-muted)" }}
+          >
+            Hasil kerja yang dirancang untuk mencapai tujuan bisnis, bukan
+            sekadar tampil menarik.
+          </p>
         </div>
+        <a
+          href="https://portfolio-adiprimanto.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 font-display font-semibold text-sm shrink-0 transition-colors duration-200"
+          style={{ color: "var(--color-primary)", textDecoration: "none" }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.color = "var(--color-primary-2)")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.color = "var(--color-primary)")
+          }
+        >
+          Jelajahi Seluruh Portfolio <ArrowUpRight size={18} />
+        </a>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {projects.map((p, i) => (
-            <div key={i} className="group cursor-pointer">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-6 border border-white/10">
-                <Image 
-                  src={p.image} 
-                  alt={p.title} 
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="w-full h-fit object-contain group-hover:scale-110 transition-transform duration-500" 
-                />
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
-                   <p className="text-blue-400 text-sm font-bold uppercase tracking-widest mb-1">{p.category}</p>
-                   <h4 className="text-white text-xl font-bold">{p.title}</h4>
-                </div> */}
-              </div>
-              <div className="flex justify-between items-center px-2">
-                <div>
-                  <h4 className="text-white font-bold">{p.title}</h4>
-                  <p className="text-blue-500 text-sm font-medium">{p.impact}</p>
-                  {/* <p className={`${i === 0 ? 'text-orange-500' : i === 1 ? 'text-purple-500' : i === 2 ? 'text-green-500' : 'text-gray-500'} border border-white/10 px-2 py-1 rounded-md w-fit text-xs font-medium mt-2`}>{p.badge}</p> */}
-                  <p className="text-gray-500 border border-white/10 px-2 py-1 rounded-md w-fit text-xs font-medium mt-2">{p.category}</p>
-                </div>
+      {/* Grid */}
+      <div
+        className="grid md:grid-cols-3"
+        style={{
+          gap: "2px",
+          background: "var(--color-border)",
+          border: "1px solid var(--color-border)",
+          borderRadius: "16px",
+          overflow: "hidden",
+        }}
+      >
+        {projects.map((p, i) => (
+          <div
+            key={i}
+            className="flex flex-col transition-all duration-300 group"
+            style={{ background: "var(--color-bg)", cursor: "default" }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.background = "var(--color-bg-3)")
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.background = "var(--color-bg)")
+            }
+          >
+            {/* Image */}
+            <div
+              className="relative overflow-hidden"
+              style={{
+                aspectRatio: "16/10",
+                background: "var(--color-surface)",
+              }}
+            >
+              <Image
+                src={p.image}
+                alt={p.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover object-top group-hover:scale-[1.06] transition-transform duration-500"
+                style={{ filter: "brightness(0.9)" }}
+              />
+
+              {/* Category badge */}
+              <div
+                className="absolute top-3 left-3 font-code text-[10px] tracking-[0.06em] z-10"
+                style={{
+                  padding: "4px 10px",
+                  background: "rgba(12, 12, 14, 0.85)",
+                  backdropFilter: "blur(8px)",
+                  border: "1px solid var(--color-border-2)",
+                  borderRadius: "100px",
+                  color: "var(--color-primary-2)",
+                }}
+              >
+                {p.category}
               </div>
             </div>
-          ))}
-        </div>
-        <p className="text-center mt-12 text-gray-500 text-sm">
-          Cuplikan project terpilih — lihat detail lengkap di halaman portfolio.
-        </p>
+
+            {/* Info */}
+            <div
+              className="flex flex-col gap-2 flex-1"
+              style={{
+                padding: "20px 20px 24px",
+                borderTop: "1px solid var(--color-border)",
+              }}
+            >
+              <h4
+                className="font-display font-bold leading-[1.3] tracking-[-0.01em]"
+                style={{ fontSize: "15px", color: "var(--color-white)" }}
+              >
+                {p.title}
+              </h4>
+              <p
+                className="text-xs leading-[1.6] font-light"
+                style={{ color: "var(--color-muted)" }}
+              >
+                {p.impact}
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-1">
+                {p.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="font-code text-[10px] tracking-[0.04em] px-2.5 py-0.5 rounded-full"
+                    style={{
+                      background: "var(--color-primary-subtle)",
+                      border: "1px solid rgba(43, 127, 255, 0.15)",
+                      color: "var(--color-primary-2)",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Portfolio;
