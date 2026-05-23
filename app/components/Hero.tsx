@@ -3,10 +3,13 @@
 import Image from "next/image";
 import {
   MessageCircle,
-  ArrowRight,
+  Download,
   Zap,
   TrendingUp,
   Search,
+  Github,
+  Linkedin,
+  Instagram,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -20,26 +23,6 @@ const avatars = [
   "https://images.unsplash.com/photo-1700126761911-84f19978e8bb?q=80&w=80&auto=format&fit=crop",
 ];
 
-const techStack = [
-  "React",
-  "Next.js",
-  "Vue.js",
-  "Nuxt",
-  "TypeScript",
-  "Tailwind CSS",
-  "WordPress",
-  "SEO",
-  "AI Integration",
-  "React",
-  "Next.js",
-  "Vue.js",
-  "Nuxt",
-  "TypeScript",
-  "Tailwind CSS",
-  "WordPress",
-  "SEO",
-  "AI Integration",
-];
 
 const metrics = [
   {
@@ -91,7 +74,7 @@ const Hero = () => (
 
       {/* Glow orbs */}
       <div
-        className="absolute -top-40 -right-32 w-[800px] h-[800px] rounded-full pointer-events-none z-0"
+        className="absolute -top-40 -right-32 w-200 h-200 rounded-full pointer-events-none z-0"
         style={{
           background:
             "radial-gradient(circle, rgba(43,127,255,0.12) 0%, transparent 65%)",
@@ -99,7 +82,7 @@ const Hero = () => (
         }}
       />
       <div
-        className="absolute -bottom-40 -left-20 w-[600px] h-[600px] rounded-full pointer-events-none z-0"
+        className="absolute -bottom-40 -left-20 w-150 h-150 rounded-full pointer-events-none z-0"
         style={{
           background:
             "radial-gradient(circle, rgba(0,212,255,0.08) 0%, transparent 65%)",
@@ -112,19 +95,32 @@ const Hero = () => (
         className="relative z-10 mx-auto w-[78%] max-lg:w-[88%] max-md:w-[92%] grid items-center py-36 max-lg:py-28 max-md:py-20 gap-x-14 max-lg:flex max-lg:flex-col max-lg:gap-12 max-md:gap-8"
         style={{ gridTemplateColumns: "60px 1fr 380px" }}
       >
-        {/* Socials column */}
+        {/* Socials column — desktop only */}
         <div className="hidden lg:flex flex-col items-center gap-6">
           {[
-            { label: "GH", href: "https://github.com/adiprimanto" },
-            { label: "LI", href: "https://www.linkedin.com/in/adi-primanto/" },
-            { label: "IG", href: "https://www.instagram.com/adiprimanto" },
-          ].map(({ label, href }) => (
+            {
+              label: "GitHub",
+              icon: Github,
+              href: "https://github.com/adiprimanto",
+            },
+            {
+              label: "LinkedIn",
+              icon: Linkedin,
+              href: "https://www.linkedin.com/in/adi-primanto/",
+            },
+            {
+              label: "Instagram",
+              icon: Instagram,
+              href: "https://www.instagram.com/adiprimanto",
+            },
+          ].map(({ label, icon: Icon, href }) => (
             <a
               key={label}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-code text-[9px] tracking-[0.12em] uppercase transition-all duration-300 hover:-translate-y-1"
+              aria-label={label}
+              className="transition-all duration-300 hover:-translate-y-1"
               style={{ color: "var(--color-muted)", textDecoration: "none" }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.color = "var(--color-primary)")
@@ -133,11 +129,11 @@ const Hero = () => (
                 (e.currentTarget.style.color = "var(--color-muted)")
               }
             >
-              {label}
+              <Icon size={16} />
             </a>
           ))}
           <div
-            className="w-px h-14 mt-2"
+            className="hidden lg:block w-px h-14 mt-2"
             style={{
               background:
                 "linear-gradient(to bottom, rgba(43,127,255,0.5), transparent)",
@@ -168,10 +164,10 @@ const Hero = () => (
                 }}
               />
               <span
-                className="font-display font-semibold text-[11px] tracking-widest uppercase"
+                className="font-display font-semibold text-[10px] tracking-[0.1em] uppercase"
                 style={{ color: "var(--color-light)" }}
               >
-                Jasa Pembuatan Website Profesional
+                Jasa Website &amp; Mobile App
               </span>
             </div>
           </motion.div>
@@ -192,24 +188,21 @@ const Hero = () => (
               className="font-display font-medium text-xs tracking-[0.14em] uppercase"
               style={{ color: "var(--color-muted)" }}
             >
-              Halo — Saya Adi Primanto
+              Premium App Development
             </span>
           </motion.div>
 
           {/* ─── BIG HEADLINE ─── */}
           <motion.div {...fadeUp(0.14)} className="mb-7">
             <h1
-              className="font-display font-black leading-[0.95] tracking-[-0.035em] uppercase"
+              className="font-display font-black leading-[1.0] tracking-[-0.03em] uppercase"
               style={{
-                fontSize: "clamp(38px, 3vw, 76px)",
+                fontSize: "clamp(28px, 6vw + 0.5rem, 76px)",
                 color: "var(--color-white)",
               }}
             >
-              Website yang
+              Membangun Website
               <br />
-              Bekerja
-              <br />
-              {/* Outline + gradient mix */}
               <span className="relative">
                 <span
                   className="relative z-10"
@@ -220,31 +213,34 @@ const Hero = () => (
                     backgroundClip: "text",
                   }}
                 >
-                  Untuk Bisnis
+                  Berkualitas
+                  <br />
+                  untuk Bisnis
                 </span>
-              </span>{" "}
-              {/* <span
+              </span>
+              <br />
+              <span
                 style={{
                   WebkitTextStroke: "1.5px rgba(255,255,255,0.8)",
                   color: "transparent",
                   display: "inline-block",
                 }}
               >
-                Setia.
-              </span> */}
+                Anda
+              </span>
             </h1>
           </motion.div>
 
           {/* Role */}
           <motion.div
             {...fadeUp(0.22)}
-            className="flex items-center gap-2 mb-6 font-code"
+            className="flex items-start gap-2 mb-6 font-code flex-wrap"
             style={{ fontSize: "13px", color: "var(--color-light)" }}
           >
-            <span style={{ color: "var(--color-primary)", fontSize: "15px" }}>
+            <span style={{ color: "var(--color-primary)", fontSize: "15px", flexShrink: 0 }}>
               {"</>"}
             </span>
-            Software Engineer &amp; App Developer · Yogyakarta
+            <span>Adi Primanto · Software Engineer · Yogyakarta</span>
           </motion.div>
 
           {/* Description */}
@@ -253,18 +249,25 @@ const Hero = () => (
             className="text-sm leading-[1.85] font-light max-w-sm mb-9"
             style={{ color: "var(--color-muted)" }}
           >
-            Klien Anda menilai bisnis dari website-nya. Saya pastikan kesan
-            pertama itu langsung mengkonversi.
-            {/* <strong style={{ color: "var(--color-white)", fontWeight: 500 }}>
-              cepat, profesional
-            </strong> */}
+            Dirancang untuk membantu bisnis tampil lebih{" "}
+            <strong style={{ color: "var(--color-white)", fontWeight: 500 }}>
+              profesional dan dipercaya
+            </strong>{" "}
+            sejak kesan pertama.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
             {...fadeUp(0.35)}
-            className="flex flex-wrap gap-4 items-center mb-10"
+            className="flex flex-wrap gap-3 items-center mb-8"
           >
+            <a
+              href="/cv_new_adi_primanto.pdf"
+              download
+              className="btn-ghost-style"
+            >
+              Download CV <Download size={14} />
+            </a>
             <a
               href={WA_URL}
               target="_blank"
@@ -273,9 +276,48 @@ const Hero = () => (
             >
               Konsultasi Gratis <MessageCircle size={14} />
             </a>
-            <a href="#portfolio" className="btn-ghost-style">
-              Lihat Hasil Kerja <ArrowRight size={14} />
-            </a>
+          </motion.div>
+
+          {/* Mobile socials — hidden on desktop */}
+          <motion.div
+            {...fadeUp(0.4)}
+            className="flex lg:hidden items-center gap-5 mb-8"
+          >
+            {[
+              {
+                label: "GitHub",
+                icon: Github,
+                href: "https://github.com/adiprimanto",
+              },
+              {
+                label: "LinkedIn",
+                icon: Linkedin,
+                href: "https://www.linkedin.com/in/adi-primanto/",
+              },
+              {
+                label: "Instagram",
+                icon: Instagram,
+                href: "https://www.instagram.com/adiprimanto",
+              },
+            ].map(({ label, icon: Icon, href }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="transition-all duration-300 hover:-translate-y-1"
+                style={{ color: "var(--color-muted)", textDecoration: "none" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.color = "var(--color-primary)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.color = "var(--color-muted)")
+                }
+              >
+                <Icon size={18} />
+              </a>
+            ))}
           </motion.div>
 
           {/* Social proof */}
@@ -292,7 +334,7 @@ const Hero = () => (
                   alt={`Client ${i + 1}`}
                   width={34}
                   height={34}
-                  className="w-[34px] h-[34px] rounded-full object-cover"
+                  className="w-8.5 h-8.5 rounded-full object-cover"
                   style={{ border: "2px solid var(--color-bg)" }}
                   unoptimized
                 />
@@ -320,7 +362,7 @@ const Hero = () => (
         >
           {/* Rotating rings */}
           <div
-            className="absolute w-[460px] h-[460px] rounded-full pointer-events-none"
+            className="absolute w-115 h-115 rounded-full pointer-events-none"
             style={{
               border: "1px solid rgba(43,127,255,0.1)",
               animation: "spin-ring 22s linear infinite",
@@ -335,7 +377,7 @@ const Hero = () => (
             />
           </div>
           <div
-            className="absolute w-[360px] h-[360px] rounded-full pointer-events-none"
+            className="absolute w-90 h-90 rounded-full pointer-events-none"
             style={{
               border: "1px solid rgba(0,212,255,0.07)",
               animation: "spin-ring 16s linear infinite reverse",
@@ -344,7 +386,7 @@ const Hero = () => (
 
           {/* Project screenshot */}
           <div
-            className="relative w-[340px] rounded-2xl overflow-hidden group z-10"
+            className="relative w-85 rounded-2xl overflow-hidden group z-10"
             style={{
               border: "1px solid var(--color-border-2)",
               background: "var(--color-surface)",
@@ -380,7 +422,7 @@ const Hero = () => (
               className="w-full h-auto group-hover:scale-[1.04] transition-transform duration-700"
               style={{ filter: "brightness(0.88)", display: "block" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0e]/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 bg-linear-to-t from-[#0c0c0e]/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
 
           {/* Metric badges */}
@@ -413,30 +455,6 @@ const Hero = () => (
       </div>
     </section>
 
-    {/* ─── TECH STACK MARQUEE ─── */}
-    <div
-      className="overflow-hidden py-4"
-      style={{
-        background: "var(--color-bg-2)",
-        borderTop: "1px solid var(--color-border)",
-        borderBottom: "1px solid var(--color-border)",
-      }}
-    >
-      <div className="marquee-track">
-        {techStack.map((tech, i) => (
-          <span
-            key={i}
-            className="inline-flex items-center gap-10 px-10 font-display font-semibold text-xs tracking-[0.12em] uppercase whitespace-nowrap"
-            style={{ color: "var(--color-muted)" }}
-          >
-            {tech}
-            <span style={{ color: "var(--color-primary)", fontSize: "7px" }}>
-              ✦
-            </span>
-          </span>
-        ))}
-      </div>
-    </div>
   </>
 );
 

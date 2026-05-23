@@ -60,9 +60,7 @@ const About = () => (
         </div>
       </motion.div>
 
-      <div
-        className="grid lg:grid-cols-[1fr_1.1fr] items-center gap-20 max-lg:gap-14 max-md:gap-10"
-      >
+      <div className="grid lg:grid-cols-[1fr_1.1fr] items-center gap-20 max-lg:gap-14 max-md:gap-10">
         {/* LEFT — Photo */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -157,28 +155,30 @@ const About = () => (
               borderRadius: "8px",
             }}
           >
-            <span style={{ color: "#4a4a6a" }}>{"// stack favorit"}</span>
+            <span style={{ color: "#4a4a6a" }}>{"// now.js"}</span>
             <span>
-              <span style={{ color: "var(--color-primary-2)" }}>frontend</span>
+              <span style={{ color: "var(--color-primary-2)" }}>currently</span>
               <span style={{ color: "var(--color-muted)" }}>:</span>{" "}
               <span style={{ color: "#c8a97a" }}>
-                &quot;React, Next.js, Vue, Nuxt&quot;
+                &quot;fulltime @ startup&quot;
               </span>
             </span>
             <span>
-              <span style={{ color: "var(--color-primary-2)" }}>styling</span>
+              <span style={{ color: "var(--color-primary-2)" }}>freelance</span>
               <span style={{ color: "var(--color-muted)" }}>:</span>{" "}
-              <span style={{ color: "#c8a97a" }}>&quot;Tailwind CSS&quot;</span>
+              <span style={{ color: "#3ecfb2" }}>&quot;open ✓&quot;</span>
             </span>
             <span>
-              <span style={{ color: "var(--color-primary-2)" }}>language</span>
+              <span style={{ color: "var(--color-primary-2)" }}>building</span>
               <span style={{ color: "var(--color-muted)" }}>:</span>{" "}
-              <span style={{ color: "#c8a97a" }}>&quot;TypeScript&quot;</span>
+              <span style={{ color: "#c8a97a" }}>
+                &quot;client websites&quot;
+              </span>
             </span>
             <span>
-              <span style={{ color: "var(--color-primary-2)" }}>status</span>
+              <span style={{ color: "var(--color-primary-2)" }}>timezone</span>
               <span style={{ color: "var(--color-muted)" }}>:</span>{" "}
-              <span style={{ color: "#3ecfb2" }}>&quot;open to work&quot;</span>
+              <span style={{ color: "#c8a97a" }}>&quot;UTC+7&quot;</span>
             </span>
           </div>
         </motion.div>
@@ -239,9 +239,7 @@ const About = () => (
                 >
                   {s.icon}
                 </div>
-                <div
-                  className="font-display font-black leading-none gradient-text text-2xl sm:text-[28px]"
-                >
+                <div className="font-display font-black leading-none gradient-text text-2xl sm:text-[28px]">
                   {s.value}
                 </div>
                 <div

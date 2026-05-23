@@ -1,13 +1,14 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import PainPoints from './components/PainPoints';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import Process from './components/Process';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import PainPoints from "./components/PainPoints";
+import Services from "./components/Services";
+import Portfolio from "./components/Portfolio";
+import Process from "./components/Process";
+import TechStack from "./components/TechStack";
+import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <TechStack />
       <PainPoints />
       <Services />
       <Portfolio />

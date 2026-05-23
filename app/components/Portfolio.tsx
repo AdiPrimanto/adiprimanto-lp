@@ -66,20 +66,50 @@ const Portfolio = () => (
             sekadar tampil menarik.
           </p>
         </div>
+      </div>
+
+      <div className="flex justify-center mb-6">
         <a
           href="https://portfolio-adiprimanto.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-display font-semibold text-sm shrink-0 transition-colors duration-200"
-          style={{ color: "var(--color-primary)", textDecoration: "none" }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.color = "var(--color-primary-2)")
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.color = "var(--color-primary)")
-          }
+          className="group inline-flex items-center gap-3 shrink-0 transition-all duration-300"
+          style={{ textDecoration: "none" }}
         >
-          Jelajahi Seluruh Portfolio <ArrowUpRight size={18} />
+          <span
+            className="font-code text-[10px] tracking-[0.08em] px-2.5 py-1 rounded-full"
+            style={{
+              background: "rgba(43,127,255,0.12)",
+              border: "1px solid rgba(43,127,255,0.25)",
+              color: "var(--color-primary-2)",
+            }}
+          >
+            20+ Projects
+          </span>
+          <span
+            className="inline-flex items-center gap-2 font-display font-semibold text-sm px-4 py-2 rounded-full transition-all duration-300"
+            style={{
+              border: "1px solid var(--color-border-2)",
+              background: "var(--color-surface)",
+              color: "var(--color-white)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = "rgba(43,127,255,0.5)";
+              e.currentTarget.style.background = "rgba(43,127,255,0.08)";
+              e.currentTarget.style.color = "var(--color-primary-2)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = "var(--color-border-2)";
+              e.currentTarget.style.background = "var(--color-surface)";
+              e.currentTarget.style.color = "var(--color-white)";
+            }}
+          >
+            Lihat Semua Portfolio
+            <ArrowUpRight
+              size={15}
+              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+            />
+          </span>
         </a>
       </div>
 
