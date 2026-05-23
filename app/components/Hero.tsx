@@ -339,7 +339,6 @@ const Hero = () => (
                   height={34}
                   className="w-8.5 h-8.5 rounded-full object-cover"
                   style={{ border: "2px solid var(--color-bg)" }}
-                  unoptimized
                 />
               ))}
             </div>

@@ -1,6 +1,16 @@
 "use client";
 
-import { ArrowRight, Globe, Zap, ShieldCheck, Bot, Smartphone, Clock, Gauge, HeartHandshake } from "lucide-react";
+import {
+  ArrowRight,
+  Globe,
+  Zap,
+  ShieldCheck,
+  Bot,
+  Smartphone,
+  Clock,
+  Gauge,
+  HeartHandshake,
+} from "lucide-react";
 
 const WA_URL =
   "https://wa.me/6285727346620?text=Halo%20Adi%20Primanto,%20saya%20ingin%20membuat%20website%20untuk%20bisnis%20saya.";
@@ -11,7 +21,7 @@ const services = [
     title: "Landing Page",
     desc: "Satu halaman yang mendorong satu aksi. Struktur terbukti untuk memaksimalkan leads dan penjualan — bukan sekadar cantik.",
     icon: <ArrowRight size={17} />,
-    tags: ["7–14 Hari", "Konversi Tinggi", "SEO-Ready"],
+    tags: ["Konversi Tinggi", "SEO-Ready"],
   },
   {
     num: "02",
@@ -30,7 +40,7 @@ const services = [
   {
     num: "04",
     title: "Custom Web App",
-    desc: "Dashboard, SaaS, atau sistem internal — dibangun sesuai alur bisnis Anda, bukan template generik.",
+    desc: "Dashboard, SaaS, atau sistem internal — dibangun sesuai alur bisnis Anda.",
     icon: <ShieldCheck size={17} />,
     tags: ["Full Custom", "Scalable"],
   },
@@ -44,9 +54,16 @@ const services = [
   {
     num: "06",
     title: "Mobile Application",
-    desc: "Aplikasi mobile yang responsif dan performant — pengalaman pengguna yang mulus di Android maupun iOS.",
+    desc: "Aplikasi mobile yang responsif — pengalaman pengguna yang mulus di Android maupun iOS.",
     icon: <Smartphone size={17} />,
     tags: ["Android & iOS", "User-Friendly"],
+  },
+  {
+    num: "07",
+    title: "Maintenance & Support",
+    desc: "Pembaruan rutin, perbaikan bug, dan dukungan teknis — memastikan website atau aplikasi Anda selalu optimal.",
+    icon: <ShieldCheck size={17} />,
+    tags: ["Pembaruan Rutin", "Dukungan Teknis"],
   },
 ];
 
@@ -95,7 +112,10 @@ const Services = () => (
           <div className="flex flex-col gap-5">
             <h2
               className="font-display font-black tracking-[-0.02em] leading-[1.05]"
-              style={{ fontSize: "clamp(32px, 4vw, 52px)", color: "var(--color-white)" }}
+              style={{
+                fontSize: "clamp(32px, 4vw, 52px)",
+                color: "var(--color-white)",
+              }}
             >
               Apa yang Bisa <br />
               <span className="gradient-text">Saya Bantu.</span>
@@ -104,8 +124,8 @@ const Services = () => (
               className="text-sm font-light leading-[1.85] max-w-sm"
               style={{ color: "var(--color-muted)" }}
             >
-              Setiap layanan dikerjakan sendiri — bukan outsource, bukan template
-              asal jadi. Fokus pada hasil yang bisa Anda rasakan.
+              Setiap layanan dikerjakan sendiri — bukan outsource, bukan
+              template asal jadi. Fokus pada hasil yang bisa Anda rasakan.
             </p>
           </div>
 

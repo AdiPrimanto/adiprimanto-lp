@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Adi Primanto",
   },
   description:
-    "Jasa pembuatan website dan aplikasi mobile profesional di Yogyakarta. Spesialis Next.js, Vue.js, React Native, Flutter. 5+ tahun pengalaman, 20+ proyek selesai. Konsultasi gratis.",
+    "Jasa pembuatan website dan aplikasi mobile profesional di Yogyakarta. Spesialis Next.js, Vue.js, React Native, Laravel. 5+ tahun pengalaman, 20+ proyek selesai. Konsultasi gratis.",
   keywords: [
     "jasa website Yogyakarta",
     "jasa pembuatan website",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Adi Primanto — Jasa Website & Aplikasi Profesional Yogyakarta",
     description:
-      "Jasa pembuatan website dan aplikasi mobile profesional. Spesialis Next.js, Vue.js, Flutter. 5+ tahun pengalaman, konsultasi gratis.",
+      "Jasa pembuatan website dan aplikasi mobile profesional. Spesialis Next.js, Vue.js, React Native, Laravel. 5+ tahun pengalaman, konsultasi gratis.",
     type: "website",
     url: BASE_URL,
     siteName: "Adi Primanto",
@@ -224,7 +224,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: jsonLd }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <a href="#main-content" className="skip-to-content">
+          Lewati ke konten utama
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

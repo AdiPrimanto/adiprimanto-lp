@@ -73,12 +73,12 @@ const Footer = () => (
           >
             Web &amp; App Developer · Yogyakarta
           </span>
-          <p
+          {/* <p
             className="text-sm font-light leading-[1.7] mt-1 max-w-xs"
             style={{ color: "var(--color-muted)" }}
           >
             Website yang bekerja untuk bisnis Anda — bukan sekadar tampil bagus.
-          </p>
+          </p> */}
         </div>
 
         {/* Nav */}
@@ -209,6 +209,7 @@ const Footer = () => (
         </p>
         <a
           href="#home"
+          aria-label="Kembali ke atas"
           className="flex items-center justify-center w-9 h-9 rounded-lg transition-all duration-200"
           style={{
             background: "var(--color-surface)",

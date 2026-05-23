@@ -14,14 +14,16 @@ export default function Home() {
   return (
     <div className="selection:bg-blue-500 selection:text-white">
       <Navbar />
-      <Hero />
-      <About />
-      <TechStack />
-      <PainPoints />
-      <Services />
-      <Portfolio />
-      <Process />
-      <FAQ />
+      <main id="main-content">
+        <Hero />
+        <About />
+        <TechStack />
+        <PainPoints />
+        <Services />
+        <Portfolio />
+        <Process />
+        <FAQ />
+      </main>
       <Footer />
       <WhatsAppButton />
     </div>

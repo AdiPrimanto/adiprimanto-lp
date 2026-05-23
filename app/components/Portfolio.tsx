@@ -89,7 +89,7 @@ const Portfolio = () => {
                 color: "var(--color-primary-2)",
               }}
             >
-              20+ Projects
+              30+ Projects
             </span>
             <span
               className="inline-flex items-center gap-2 font-display font-semibold text-sm px-4 py-2 rounded-full transition-all duration-300"
@@ -139,12 +139,16 @@ const Portfolio = () => {
                 {/* Image skeleton */}
                 <div
                   className="relative overflow-hidden"
-                  style={{ aspectRatio: "16/10", background: "var(--color-surface)" }}
+                  style={{
+                    aspectRatio: "16/10",
+                    background: "var(--color-surface)",
+                  }}
                 >
                   <div
                     className="absolute inset-0"
                     style={{
-                      background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%)",
+                      background:
+                        "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%)",
                       animation: "shimmer 1.8s ease-in-out infinite",
                       backgroundSize: "200% 100%",
                     }}
@@ -154,7 +158,10 @@ const Portfolio = () => {
                 {/* Info skeleton */}
                 <div
                   className="flex flex-col gap-3"
-                  style={{ padding: "20px 20px 24px", borderTop: "1px solid var(--color-border)" }}
+                  style={{
+                    padding: "20px 20px 24px",
+                    borderTop: "1px solid var(--color-border)",
+                  }}
                 >
                   {/* Title */}
                   <div
@@ -170,7 +177,8 @@ const Portfolio = () => {
                     <div
                       className="absolute inset-0"
                       style={{
-                        background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%)",
+                        background:
+                          "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%)",
                         animation: "shimmer 1.8s ease-in-out infinite",
                         backgroundSize: "200% 100%",
                       }}
@@ -190,7 +198,8 @@ const Portfolio = () => {
                     <div
                       className="absolute inset-0"
                       style={{
-                        background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%)",
+                        background:
+                          "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%)",
                         animation: "shimmer 1.8s ease-in-out infinite 0.15s",
                         backgroundSize: "200% 100%",
                       }}
@@ -213,7 +222,8 @@ const Portfolio = () => {
                         <div
                           className="absolute inset-0"
                           style={{
-                            background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%)",
+                            background:
+                              "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%)",
                             animation: `shimmer 1.8s ease-in-out infinite ${j * 0.1}s`,
                             backgroundSize: "200% 100%",
                           }}
@@ -242,7 +252,10 @@ const Portfolio = () => {
                 <div
                   key={p.id}
                   className="flex flex-col transition-all duration-300 group"
-                  style={{ background: "var(--color-bg)", cursor: p.demo ? "pointer" : "default" }}
+                  style={{
+                    background: "var(--color-bg)",
+                    cursor: p.demo ? "pointer" : "default",
+                  }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.background = "var(--color-bg-3)")
                   }
@@ -266,7 +279,6 @@ const Portfolio = () => {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover object-top group-hover:scale-[1.06] transition-transform duration-500"
                       style={{ filter: "brightness(0.9)" }}
-                      unoptimized
                     />
 
                     {/* Demo badge */}
