@@ -18,10 +18,12 @@ type Project = {
 const PROJECT_IDS = [32, 31, 30, 29, 28, 24];
 
 const Portfolio = () => {
+  const hasSupabase = !!process.env.NEXT_PUBLIC_SUPABASE_URL;
   const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(hasSupabase);
 
   useEffect(() => {
+    if (!hasSupabase) return;
     supabase
       .from("projects")
       .select("*")
@@ -31,7 +33,7 @@ const Portfolio = () => {
         setProjects(data ?? []);
         setLoading(false);
       });
-  }, []);
+  }, [hasSupabase]);
 
   return (
     <section
