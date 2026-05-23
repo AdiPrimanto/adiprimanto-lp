@@ -236,7 +236,13 @@ const Hero = () => (
             className="flex items-center gap-x-2 gap-y-0.5 mb-6 font-code flex-wrap"
             style={{ fontSize: "13px", color: "var(--color-light)" }}
           >
-            <span style={{ color: "var(--color-primary)", fontSize: "15px", flexShrink: 0 }}>
+            <span
+              style={{
+                color: "var(--color-primary)",
+                fontSize: "15px",
+                flexShrink: 0,
+              }}
+            >
               {"</>"}
             </span>
             <span>Adi Primanto</span>
@@ -348,7 +354,7 @@ const Hero = () => (
             >
               Dipercaya{" "}
               <strong style={{ color: "var(--color-white)", fontWeight: 500 }}>
-                20+ bisnis lokal & startup
+                30+ bisnis lokal & startup
               </strong>{" "}
               di Indonesia
             </p>

@@ -23,7 +23,7 @@ const stats = [
   },
   {
     icon: <Briefcase size={16} />,
-    value: "20+",
+    value: "30+",
     label: "Proyek Selesai",
     sub: "berbagai industri",
   },

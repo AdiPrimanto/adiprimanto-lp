@@ -16,7 +16,7 @@ const points = [
     color: "#a855f7",
   },
   {
-    title: "Belum Mobile-Friendly",
+    title: "Tidak Mobile-Friendly",
     desc: "Mayoritas pengguna mengakses website lewat smartphone. Tanpa tampilan mobile yang baik, potensi pasar ikut hilang.",
     icon: <Smartphone size={20} />,
     color: "#22c55e",
