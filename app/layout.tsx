@@ -1,61 +1,195 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const BASE_URL = "https://adiprimanto.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Adi Primanto - Software Engineer & Web Developer",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "Adi Primanto — Jasa Website & Aplikasi Profesional Yogyakarta",
+    template: "%s | Adi Primanto",
+  },
   description:
-    "Membangun kehadiran digital yang berkelas, cepat, dan dioptimasi untuk mendominasi pasar. 5+ tahun pengalaman membangun website profesional.",
+    "Jasa pembuatan website dan aplikasi mobile profesional di Yogyakarta. Spesialis Next.js, Vue.js, React Native, Flutter. 5+ tahun pengalaman, 20+ proyek selesai. Konsultasi gratis.",
   keywords: [
-    "web developer",
-    "software engineer",
-    "landing page",
-    "website",
-    "Next.js",
-    "React",
-    "Vue.js",
-    "Yogyakarta",
+    "jasa website Yogyakarta",
+    "jasa pembuatan website",
+    "jasa aplikasi mobile",
+    "web developer Yogyakarta",
+    "software engineer freelance",
+    "jasa landing page",
+    "jasa company profile",
+    "Next.js developer Indonesia",
+    "React developer Yogyakarta",
+    "Vue.js developer",
+    "Flutter developer Indonesia",
+    "React Native developer",
+    "jasa website bisnis",
+    "freelance web developer Indonesia",
+    "Adi Primanto",
   ],
-  authors: [{ name: "Adi Primanto" }],
-  metadataBase: new URL("https://adiprimanto.vercel.app"),
+  authors: [{ name: "Adi Primanto", url: BASE_URL }],
+  creator: "Adi Primanto",
+  publisher: "Adi Primanto",
+  alternates: {
+    canonical: BASE_URL,
+  },
   icons: {
     icon: [
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
       { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/manifest.json",
   openGraph: {
-    title: "Adi Primanto - Software Engineer & Web Developer",
+    title: "Adi Primanto — Jasa Website & Aplikasi Profesional Yogyakarta",
     description:
-      "Membangun kehadiran digital yang berkelas, cepat, dan dioptimasi untuk mendominasi pasar.",
+      "Jasa pembuatan website dan aplikasi mobile profesional. Spesialis Next.js, Vue.js, Flutter. 5+ tahun pengalaman, konsultasi gratis.",
     type: "website",
-    url: "https://adiprimanto.vercel.app",
+    url: BASE_URL,
     siteName: "Adi Primanto",
     images: [
       {
         url: "/adi.webp",
         width: 1200,
         height: 630,
-        alt: "Adi Primanto - Software Engineer",
+        alt: "Adi Primanto — Jasa Website & Aplikasi Profesional Yogyakarta",
       },
     ],
     locale: "id_ID",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adi Primanto - Software Engineer & Web Developer",
+    title: "Adi Primanto — Jasa Website & Aplikasi Profesional Yogyakarta",
     description:
-      "Membangun kehadiran digital yang berkelas, cepat, dan dioptimasi untuk mendominasi pasar.",
+      "Jasa pembuatan website dan aplikasi mobile profesional di Yogyakarta. Konsultasi gratis.",
     images: ["/adi.webp"],
+    creator: "@adiprimanto",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
+
+// JSON-LD is hardcoded static data — no XSS risk
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${BASE_URL}/#person`,
+      name: "Adi Primanto",
+      url: BASE_URL,
+      image: `${BASE_URL}/adi.webp`,
+      jobTitle: "Software Engineer & Web Developer",
+      description:
+        "Software Engineer dengan 5+ tahun pengalaman membangun website dan aplikasi mobile profesional untuk bisnis di Indonesia.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Yogyakarta",
+        addressCountry: "ID",
+      },
+      sameAs: [
+        "https://github.com/adiprimanto",
+        "https://www.linkedin.com/in/adi-primanto/",
+        "https://www.instagram.com/adiprimanto",
+      ],
+      knowsAbout: [
+        "Web Development",
+        "Mobile App Development",
+        "React",
+        "Next.js",
+        "Vue.js",
+        "Flutter",
+        "React Native",
+        "TypeScript",
+      ],
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": `${BASE_URL}/#business`,
+      name: "Adi Primanto — Jasa Website & Aplikasi",
+      url: BASE_URL,
+      image: `${BASE_URL}/adi.webp`,
+      description:
+        "Jasa pembuatan website profesional dan aplikasi mobile untuk bisnis dan UMKM di Indonesia.",
+      telephone: "+6285727346620",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Yogyakarta",
+        addressRegion: "DI Yogyakarta",
+        addressCountry: "ID",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: -7.7956,
+        longitude: 110.3695,
+      },
+      areaServed: { "@type": "Country", name: "Indonesia" },
+      priceRange: "$$",
+      openingHours: "Mo-Fr 09:00-17:00",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Layanan Web & App Development",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Jasa Pembuatan Landing Page",
+              description:
+                "Landing page profesional dengan konversi tinggi menggunakan Next.js atau Vue.js",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Jasa Pembuatan Company Profile",
+              description:
+                "Website company profile profesional untuk meningkatkan kredibilitas bisnis",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Jasa Pembuatan Aplikasi Mobile",
+              description:
+                "Aplikasi mobile cross-platform menggunakan React Native atau Flutter",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Jasa Web Application Development",
+              description:
+                "Aplikasi web kompleks dengan dashboard, CRM, dan sistem manajemen",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${BASE_URL}/#website`,
+      url: BASE_URL,
+      name: "Adi Primanto",
+      description: "Portfolio & Jasa Web Development",
+      publisher: { "@id": `${BASE_URL}/#person` },
+      inLanguage: "id-ID",
+    },
+  ],
+});
 
 export default function RootLayout({
   children,
@@ -65,21 +199,18 @@ export default function RootLayout({
   return (
     <html lang="id">
       <head>
-        <link
-          rel="icon"
-          href="/favicon-32.png"
-          type="image/png"
-          sizes="32x32"
-        />
+        <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Syne+Mono&family=Inter:wght@300;400;500&display=swap"
           rel="stylesheet"
+        />
+        {/* JSON-LD structured data — static hardcoded content, no XSS risk */}
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: jsonLd }}
         />
       </head>
       <body className="antialiased">{children}</body>
