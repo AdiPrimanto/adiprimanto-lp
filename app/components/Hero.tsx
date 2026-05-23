@@ -23,7 +23,6 @@ const avatars = [
   "https://images.unsplash.com/photo-1700126761911-84f19978e8bb?q=80&w=80&auto=format&fit=crop",
 ];
 
-
 const metrics = [
   {
     icon: <Zap size={14} />,
@@ -92,7 +91,7 @@ const Hero = () => (
 
       {/* ─── LAYOUT ─── */}
       <div
-        className="relative z-10 mx-auto w-[78%] max-lg:w-[88%] max-md:w-[92%] grid items-center py-36 max-lg:py-28 max-md:py-20 gap-x-14 max-lg:flex max-lg:flex-col max-lg:gap-12 max-md:gap-8"
+        className="relative z-10 mx-auto w-[78%] max-lg:w-[88%] max-md:w-[92%] grid items-center py-32 max-lg:py-24 max-md:py-16 gap-x-14 max-lg:flex max-lg:flex-col max-lg:gap-12 max-md:gap-8"
         style={{ gridTemplateColumns: "60px 1fr 380px" }}
       >
         {/* Socials column — desktop only */}
@@ -164,7 +163,7 @@ const Hero = () => (
                 }}
               />
               <span
-                className="font-display font-semibold text-[10px] tracking-[0.1em] uppercase"
+                className="font-display font-semibold text-[10px] tracking-widest uppercase"
                 style={{ color: "var(--color-light)" }}
               >
                 Jasa Website &amp; Mobile App
@@ -195,9 +194,9 @@ const Hero = () => (
           {/* ─── BIG HEADLINE ─── */}
           <motion.div {...fadeUp(0.14)} className="mb-7">
             <h1
-              className="font-display font-black leading-[1.0] tracking-[-0.03em] uppercase"
+              className="font-display font-black leading-none tracking-[-0.03em] uppercase"
               style={{
-                fontSize: "clamp(28px, 6vw + 0.5rem, 76px)",
+                fontSize: "clamp(26px, 4vw + 0.5rem, 44px)",
                 color: "var(--color-white)",
               }}
             >
@@ -234,22 +233,26 @@ const Hero = () => (
           {/* Role */}
           <motion.div
             {...fadeUp(0.22)}
-            className="flex items-start gap-2 mb-6 font-code flex-wrap"
+            className="flex items-center gap-x-2 gap-y-0.5 mb-6 font-code flex-wrap"
             style={{ fontSize: "13px", color: "var(--color-light)" }}
           >
             <span style={{ color: "var(--color-primary)", fontSize: "15px", flexShrink: 0 }}>
               {"</>"}
             </span>
-            <span>Adi Primanto · Software Engineer · Yogyakarta</span>
+            <span>Adi Primanto</span>
+            <span style={{ color: "var(--color-muted)" }}>·</span>
+            <span>Software Engineer</span>
+            <span style={{ color: "var(--color-muted)" }}>·</span>
+            <span>Yogyakarta</span>
           </motion.div>
 
           {/* Description */}
           <motion.p
             {...fadeUp(0.28)}
-            className="text-sm leading-[1.85] font-light max-w-sm mb-9"
+            className="text-sm leading-[1.85] font-light max-w-sm mb-4"
             style={{ color: "var(--color-muted)" }}
           >
-            Dirancang untuk membantu bisnis tampil lebih{" "}
+            Bantu bisnis tampil lebih{" "}
             <strong style={{ color: "var(--color-white)", fontWeight: 500 }}>
               profesional dan dipercaya
             </strong>{" "}
@@ -454,7 +457,6 @@ const Hero = () => (
         </motion.div>
       </div>
     </section>
-
   </>
 );
 
