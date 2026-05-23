@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://adiprimanto.vercel.app/sitemap.xml",
+    sitemap: "https://adiprimanto.com/sitemap.xml",
   };
 }
