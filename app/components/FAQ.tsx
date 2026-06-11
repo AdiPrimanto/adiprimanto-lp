@@ -103,7 +103,7 @@ const FAQ = () => (
     >
       {/* Eyebrow */}
       <div className="section-eyebrow">
-        06 <span className="eyebrow-sep">/</span> FAQ
+        07 <span className="eyebrow-sep">/</span> FAQ
       </div>
 
       <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16 items-start">

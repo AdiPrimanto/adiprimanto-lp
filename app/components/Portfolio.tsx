@@ -75,7 +75,7 @@ const Portfolio = () => {
 
         <div className="flex justify-center mb-6">
           <a
-            href="https://portfolio-adiprimanto.vercel.app/"
+            href="https://portfolio.adiprimanto.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 shrink-0 transition-all duration-300"

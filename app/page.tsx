@@ -5,6 +5,7 @@ import PainPoints from "./components/PainPoints";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
 import Process from "./components/Process";
+import Testimonial from "./components/Testimonial";
 import TechStack from "./components/TechStack";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
@@ -22,6 +23,7 @@ export default function Home() {
         <Services />
         <Portfolio />
         <Process />
+        <Testimonial />
         <FAQ />
       </main>
       <Footer />
