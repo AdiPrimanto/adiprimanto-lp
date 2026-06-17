@@ -270,11 +270,7 @@ const Hero = () => (
             {...fadeUp(0.35)}
             className="flex flex-wrap gap-3 items-center mb-8"
           >
-            <a
-              href="/cv_new_adi_primanto.pdf"
-              download
-              className="btn-ghost-style"
-            >
+            <a href="/CV_New_ADI_PRIMANTO.pdf" download className="btn-ghost-style">
               Download CV <Download size={14} />
             </a>
             <a
