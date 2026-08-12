@@ -15,7 +15,7 @@ type Project = {
   github: string;
 };
 
-const PROJECT_IDS = [32, 31, 30, 29, 28, 24];
+const PROJECT_IDS = [32, 31, 34, 29, 28, 24];
 
 const Portfolio = () => {
   const hasSupabase = !!process.env.NEXT_PUBLIC_SUPABASE_URL;
